@@ -185,4 +185,4 @@ function calculator(input, totalArr, total, clearSet) {
   }
 }
 
-exports.calc = calculator;
+module.exports = calculator;
