@@ -1,6 +1,6 @@
 {
   "name": "ez-calc",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple calculator function",
   "main": "index.js",
   "keywords": [
