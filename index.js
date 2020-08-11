@@ -1,40 +1,43 @@
-function calculator(input, totalArr, total, clearSet){
-  if(!totalArr) {
-    totalArr=[]
-  };
+function calculator(input, totalArr, total, clearSet) {
+  if (!totalArr) {
+    totalArr = [];
+  }
 
-  if(!total) {
-    total=0
-  };
+  if (!total) {
+    total = 0;
+  }
 
   const lastIsNumber =
     totalArr[totalArr.length - 1] && !isNaN(totalArr[totalArr.length - 1]);
 
-  if (!isNaN(input)){
-      handleNumber(input)
-  } else if(input === '+' || input === '-' || input === 'x' ||
-            input === '*' || input === '/'){
-    handleOperand(input)
-  } else if(input === '=')  {
-    handleEqual(input)
-  } else if(input === '.') {
-    handleDecimal(input)
-  } else if(input === '+/-' || input === 'neg') {
-    handleNegative(input)
-  } else if(input === 'ac') {
-    handleAC(input)
-  } else if(input === 'c' || input === 'clear') {
-    handleClear(input)
+  if (!isNaN(input)) {
+    handleNumber(input);
+  } else if (
+    input === "+" ||
+    input === "-" ||
+    input === "x" ||
+    input === "*" ||
+    input === "/"
+  ) {
+    handleOperand(input);
+  } else if (input === "=") {
+    handleEqual(input);
+  } else if (input === ".") {
+    handleDecimal(input);
+  } else if (input === "+/-" || input === "neg") {
+    handleNegative(input);
+  } else if (input === "ac") {
+    handleAC(input);
+  } else if (input === "c" || input === "clear") {
+    handleClear(input);
   }
-
 
   if (total > Number.MAX_VALUE || total < -Number.MAX_VALUE) {
     total = "err";
     totalArr = [];
   }
 
-  return [totalArr, total, clearSet]
-
+  return [totalArr, total, clearSet];
 
   function handleNumber(input) {
     clearSet = false;
@@ -45,8 +48,7 @@ function calculator(input, totalArr, total, clearSet){
       ) {
         totalArr[totalArr.length - 1] = input;
       } else {
-        totalArr[totalArr.length - 1] =
-          totalArr[totalArr.length - 1] + input;
+        totalArr[totalArr.length - 1] = totalArr[totalArr.length - 1] + input;
       }
     } else {
       if (totalArr[totalArr.length - 1] === "=") {
@@ -95,7 +97,7 @@ function calculator(input, totalArr, total, clearSet){
           total,
           totalArr[totalArr.length - 3],
           totalArr[totalArr.length - 2],
-          "="
+          "=",
         ];
       }
       doTheMath();
@@ -151,24 +153,23 @@ function calculator(input, totalArr, total, clearSet){
     }
   }
 
-
   function doTheMath(o) {
     const operations = {
-      "+": function(x, y) {
+      "+": function (x, y) {
         return (x + y).toPrecision(9) / 1;
       },
-      "-": function(x, y) {
+      "-": function (x, y) {
         return (x - y).toPrecision(9) / 1;
       },
-      "x": function(x, y) {
+      x: function (x, y) {
         return (x * y).toPrecision(9) / 1;
       },
-      "*": function(x, y) {
+      "*": function (x, y) {
         return (x * y).toPrecision(9) / 1;
       },
-      "/": function(x, y) {
+      "/": function (x, y) {
         return (x / y).toPrecision(9) / 1;
-      }
+      },
     };
     if (totalArr[totalArr.length - 3] === "=") {
       totalArr = [total, o];
@@ -184,4 +185,4 @@ function calculator(input, totalArr, total, clearSet){
   }
 }
 
- exports.calc = calculator
+exports.calc = calculator;
