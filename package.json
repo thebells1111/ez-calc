@@ -1,0 +1,13 @@
+{
+  "name": "ez-calc",
+  "version": "1.0.0",
+  "description": "A simple calculator function",
+  "main": "calc.js",
+  "keywords": [
+    "fcc",
+    "calculator",
+    "ez-calc"
+  ],
+  "author": "Steven Bell",
+  "license": "MIT"
+}
