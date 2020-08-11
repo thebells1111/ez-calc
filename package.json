@@ -1,8 +1,8 @@
 {
   "name": "ez-calc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple calculator function",
-  "main": "calc.js",
+  "main": "index.js",
   "keywords": [
     "fcc",
     "calculator",
